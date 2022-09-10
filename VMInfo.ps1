@@ -1,8 +1,6 @@
 Param([String]$pass,[String]$vipass)
 
-Get-Module
-
-Get-Module -Name VMware.* | Import-Module
+Install-Module VMware.PowerCLI -Scope CurrentUser -Confirm:$false -Force
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
 try{
