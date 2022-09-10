@@ -1,7 +1,13 @@
 Param(
+    [String]$smtpuser,
     [String]$smtppass,
     [String]$vcuser,
-    [String]$vcpass
+    [String]$vcpass,
+    $VIServer,
+    [String]$smtpserver,
+    $smtpport,
+    [String]$from,
+    [String]$to
 )
 
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
@@ -15,8 +21,8 @@ TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 "@
 
 try{
-    Connect-VIServer 192.168.1.20 -User $vcuser -Password $vcpass
-    $snapshots = Get-VM | %{Get-Snapshot -VM $_ | Select VM,PowerState,Name,Created,Description}
+    Connect-VIServer $VIServer -User $vcuser -Password $vcpass
+    $snapshots = Get-VM | ForEach-Object{Get-Snapshot -VM $_ | Select-Object VM,PowerState,Name,Created,Description}
     $msg = $snapshots|ConvertTo-Html -Head $Header
     Disconnect-VIServer -Confirm:$false
 }
@@ -25,14 +31,14 @@ catch{
 }
 
 
-$Username = "smtp@jamudiya.live"
+$Username = $smtpuser
 $Password = ConvertTo-SecureString $smtppass -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential $Username, $Password
 
 if(!$msg){$msg = "Blank Email Body"}
 
 try{
-    Send-MailMessage -SmtpServer smtp.zoho.in -Port 587 -From smtp@jamudiya.live -To nitish@jamudiya.live -Body "$msg" -Subject "VMSnapshotInfo $((Get-Date).ToString())" -Credential $credential -UseSsl -Verbose -BodyAsHtml
+    Send-MailMessage -SmtpServer $smtpserver -Port $smtpport -From $from -To $to -Body "$msg" -Subject "VMSnapshotInfo $((Get-Date).ToString())" -Credential $credential -UseSsl -Verbose -BodyAsHtml
 }
 catch{
     Write-Host "Failed to send email with error - $_"
