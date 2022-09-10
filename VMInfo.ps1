@@ -1,5 +1,5 @@
 Param(
-    [String]$smtppass,
+    $smtpcred,
     [String]$vcuser,
     [String]$vcpass
 )
@@ -25,14 +25,10 @@ catch{
 }
 
 
-$Username = "smtp@jamudiya.live"
-$Password = ConvertTo-SecureString $smtppass -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential $Username, $Password
-
 if(!$msg){$msg = "Blank Email Body"}
 
 try{
-    Send-MailMessage -SmtpServer smtp.zoho.in -Port 587 -From smtp@jamudiya.live -To nitish@jamudiya.live -Body "$msg" -Subject "VMInfo $((Get-Date).ToString())" -Credential $credential -UseSsl -Verbose -BodyAsHtml
+    Send-MailMessage -SmtpServer smtp.zoho.in -Port 587 -From smtp@jamudiya.live -To nitish@jamudiya.live -Body "$msg" -Subject "VMInfo $((Get-Date).ToString())" -Credential $smtpcred -UseSsl -Verbose -BodyAsHtml
 }
 catch{
     Write-Host "Failed to send email with error - $_"
