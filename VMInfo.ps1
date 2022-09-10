@@ -9,7 +9,6 @@ catch{
 
 }
 
-$msg = "Test Email"
 $User = "smtp@jamudiya.live"
 $cred=New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, ($pass| ConvertTo-SecureString)
 try{
