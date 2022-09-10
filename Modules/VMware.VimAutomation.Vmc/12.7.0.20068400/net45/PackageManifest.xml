@@ -1,6 +1,0 @@
-<ModulePackages>
-   <Package Id="VMware.VimAutomation.Vmc.Commands" Version="12.7.0.20068400" />
-   <Package Id="VMware.VimAutomation.Vmc.Impl" Version="12.7.0.20068400" />
-   <Package Id="VMware.VimAutomation.Vmc.Interop" Version="12.7.0.20068400" />
-   <Package Id="VMware.VimAutomation.Vmc.Types" Version="12.7.0.20068400" />
-</ModulePackages>

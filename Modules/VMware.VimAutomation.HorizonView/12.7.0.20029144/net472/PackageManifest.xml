@@ -1,4 +1,0 @@
-<ModulePackages>
-   <Package Id="VMware.VimAutomation.HorizonView.Interop" Version="12.7.0.20029144" />
-   <Package Id="VMware.VimAutomation.HorizonView.Types" Version="12.7.0.20029144" />
-</ModulePackages>
