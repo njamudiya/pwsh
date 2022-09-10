@@ -1,5 +1,5 @@
 Param([String]$pass,[String]$vipass)
-
+Get-Module -Name VMware.* | Import-Module
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
 try{
