@@ -1,3 +1,2 @@
-Write-Host "This is git powershell script."
-Get-Host
-get-uptime
+param($var1)
+Write-Host "The variable is $var1"
