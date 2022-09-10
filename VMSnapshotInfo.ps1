@@ -27,6 +27,7 @@ try{
     $msg = $msg|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
 
     $snapshots = Get-VM | ForEach-Object{Get-Snapshot -VM $_ | Select-Object VM,PowerState,Name,Created,Description}
+    $msg += '<br>'
     $msg += $snapshots|ConvertTo-Html -Head $Header
     Disconnect-VIServer -Confirm:$false
 }
