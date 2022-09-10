@@ -1,5 +1,5 @@
-Param([String]$pass)
-
+Param([String]$pass,[String]$vipass)
+Import-Module -Name VMware.VimAutomation.Core
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
