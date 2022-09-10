@@ -1,4 +1,8 @@
-Param([String]$pass,[String]$vipass)
+Param(
+    [String]$smtppass,
+    [String]$vcuser,
+    [String]$vcpass
+)
 
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
@@ -11,7 +15,7 @@ TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 "@
 
 try{
-    Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
+    Connect-VIServer 192.168.1.20 -User $vcuser -Password $vcpass
     $msg = Get-VM
     $msg = $msg|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
     Disconnect-VIServer -Confirm:$false
@@ -22,7 +26,7 @@ catch{
 
 
 $Username = "smtp@jamudiya.live"
-$Password = ConvertTo-SecureString $pass -AsPlainText -Force
+$Password = ConvertTo-SecureString $smtppass -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential $Username, $Password
 
 if(!$msg){$msg = "Blank Email Body"}
