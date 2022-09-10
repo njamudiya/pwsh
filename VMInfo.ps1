@@ -3,6 +3,10 @@ Param([String]$pass,[String]$vipass)
 Import-Module ./Modules/VMware.PowerCLI/12.7.0.20091289/VMware.PowerCLI.psd1 -Global
 Import-Module ./Modules/VMware.VimAutomation.Sdk/12.7.0.20067606/VMware.VimAutomation.Sdk.psd1 -Global
 
+if(-not (Get-PSSnapin VMware.VimAutomation.Core)){
+    Add-PSSnapin VMware.VimAutomation.Core
+}
+
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
