@@ -1,0 +1,178 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">VMware.VumAutomation</S>
+      <Version N="Version">12.7.0.20091294</Version>
+      <S N="Type">Module</S>
+      <S N="Description">This Windows PowerShell module contains PowerCLI VUM cmdlets.</S>
+      <S N="Author">VMware</S>
+      <S N="CompanyName">VMware</S>
+      <S N="Copyright">Copyright (c) 2020 VMware, Inc. All rights reserved.</S>
+      <DT N="PublishedDate">2022-07-12T13:06:31+05:30</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2022-09-10T14:53:30.0094026+05:30</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <Nil N="LicenseUri" />
+      <Nil N="ProjectUri" />
+      <URI N="IconUri">https://raw.githubusercontent.com/vmware/PowerCLI-Example-Scripts/1710f7ccbdd9fe9a3ab3f000e920fa6e8e042c63/resources/powercli-psgallery-icon.svg</URI>
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-EntityBaseline</S>
+                <S>Copy-Patch</S>
+                <S>Get-Baseline</S>
+                <S>Get-Compliance</S>
+                <S>Get-Patch</S>
+                <S>Get-PatchBaseline</S>
+                <S>New-PatchBaseline</S>
+                <S>Remove-Baseline</S>
+                <S>Remove-EntityBaseline</S>
+                <S>Set-PatchBaseline</S>
+                <S>Sync-Patch</S>
+                <S>Test-Compliance</S>
+                <S>Update-Entity</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-EntityBaseline</S>
+                <S>Copy-Patch</S>
+                <S>Get-Baseline</S>
+                <S>Get-Compliance</S>
+                <S>Get-Patch</S>
+                <S>Get-PatchBaseline</S>
+                <S>New-PatchBaseline</S>
+                <S>Remove-Baseline</S>
+                <S>Remove-EntityBaseline</S>
+                <S>Set-PatchBaseline</S>
+                <S>Sync-Patch</S>
+                <S>Test-Compliance</S>
+                <S>Update-Entity</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="7" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="7" />
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Ref N="Value" RefId="7" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST>
+          <Obj RefId="9">
+            <TN RefId="4">
+              <T>System.Collections.Specialized.OrderedDictionary</T>
+              <T>System.Object</T>
+            </TN>
+            <DCT>
+              <En>
+                <S N="Key">Name</S>
+                <S N="Value">VMware.VimAutomation.Core</S>
+              </En>
+              <En>
+                <S N="Key">MinimumVersion</S>
+                <S N="Value">12.7.0.20091293</S>
+              </En>
+              <En>
+                <S N="Key">CanonicalId</S>
+                <S N="Value">nuget:VMware.VimAutomation.Core/12.7.0.20091293</S>
+              </En>
+            </DCT>
+          </Obj>
+        </LST>
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="10">
+        <TN RefId="5">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">Copyright (c) 2020 VMware, Inc. All rights reserved.</S>
+          <S N="description">This Windows PowerShell module contains PowerCLI VUM cmdlets.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">327436</S>
+          <S N="downloadCount">5056046</S>
+          <S N="packageSize">3253852</S>
+          <S N="published">7/12/2022 1:06:31 PM +05:30</S>
+          <S N="created">7/12/2022 1:06:31 PM +05:30</S>
+          <S N="lastEdited">7/14/2022 11:53:40 AM +05:30</S>
+          <S N="lastUpdated">9/10/2022 9:22:36 AM +05:30</S>
+          <S N="tags">PSModule PSCmdlet_Add-EntityBaseline PSCommand_Add-EntityBaseline PSCmdlet_Copy-Patch PSCommand_Copy-Patch PSCmdlet_Get-Baseline PSCommand_Get-Baseline PSCmdlet_Get-Compliance PSCommand_Get-Compliance PSCmdlet_Get-Patch PSCommand_Get-Patch PSCmdlet_Get-PatchBaseline PSCommand_Get-PatchBaseline PSCmdlet_New-PatchBaseline PSCommand_New-PatchBaseline PSCmdlet_Remove-Baseline PSCommand_Remove-Baseline PSCmdlet_Remove-EntityBaseline PSCommand_Remove-EntityBaseline PSCmdlet_Set-PatchBaseline PSCommand_Set-PatchBaseline PSCmdlet_Sync-Patch PSCommand_Sync-Patch PSCmdlet_Test-Compliance PSCommand_Test-Compliance PSCmdlet_Update-Entity PSCommand_Update-Entity PSIncludes_Cmdlet</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2022-09-10T09:22:36Z</S>
+          <S N="NormalizedVersion">12.7.0.20091294</S>
+          <S N="Authors">VMware</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">VMware.VumAutomation.nuspec|EULA.rtf|open_source_licenses.txt|VMware.VumAutomation.cat|VMware.VumAutomation.psd1|VMware.VumAutomation.psm1|net45\ComponentDescriptor-VMware.VumAutomation.xml|net45\IntegrityService.dll|net45\PackageManifest.xml|net45\VMware.VumAutomation.Commands.dll|net45\VMware.VumAutomation.Commands.dll-Help.xml|net45\VMware.VumAutomation.Format.ps1xml|net45\VMware.VumAutomation.Impl.dll|net45\VMware.VumAutomation.ps1|net45\VMware.VumAutomation.psd1|net45\VMware.VumAutomation.Types.dll|netcoreapp2.0\ComponentDescriptor-VMware.VumAutomation.xml|netcoreapp2.0\IntegrityService.dll|netcoreapp2.0\PackageManifest.xml|netcoreapp2.0\VMware.VumAutomation.Commands.dll|netcoreapp2.0\VMware.VumAutomation.Commands.dll-Help.xml|netcoreapp2.0\VMware.VumAutomation.Format.ps1xml|netcoreapp2.0\VMware.VumAutomation.Impl.dll|netcoreapp2.0\VMware.VumAutomation.ps1|netcoreapp2.0\VMware.VumAutomation.psd1|netcoreapp2.0\VMware.VumAutomation.Types.dll</S>
+          <S N="GUID">0f491985-1583-4171-8d11-9467ed2b8ae5</S>
+          <S N="CompanyName">VMware, Inc.</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">/root/.local/share/powershell/Modules/VMware.VumAutomation/12.7.0.20091294</S>
+    </MS>
+  </Obj>
+</Objs>
