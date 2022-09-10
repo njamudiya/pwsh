@@ -4,7 +4,7 @@ Import-Module -Name VMware.Vim
 Import-Module -Name VMware.VimAutomation.Cis.Core
 Import-Module -Name VMware.VimAutomation.Cloud
 Import-Module -Name VMware.VimAutomation.Common
-Import-Module -Name VMware.VimAutomation.Core
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Core
 Import-Module -Name VMware.VimAutomation.HorizonView
 Import-Module -Name VMware.VimAutomation.License
 Import-Module -Name VMware.VimAutomation.Nsxt
