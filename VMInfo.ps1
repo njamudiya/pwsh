@@ -1,19 +1,19 @@
 Param([String]$pass,[String]$vipass)
 
-Import-Module -Name VMware.Vim
-Import-Module -Name VMware.VimAutomation.Cis.Core
-Import-Module -Name VMware.VimAutomation.Cloud
-Import-Module -Name VMware.VimAutomation.Common
+Import-Module /root/.local/share/powershell/Modules/VMware.Vim
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Cis.Core
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Cloud
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Common
 Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Core
-Import-Module -Name VMware.VimAutomation.HorizonView
-Import-Module -Name VMware.VimAutomation.License
-Import-Module -Name VMware.VimAutomation.Nsxt
-Import-Module -Name VMware.VimAutomation.Sdk
-Import-Module -Name VMware.VimAutomation.Srm
-Import-Module -Name VMware.VimAutomation.Storage
-Import-Module -Name VMware.VimAutomation.Vds
-Import-Module -Name VMware.VimAutomation.Vmc
-Import-Module -Name VMware.VimAutomation.vROps
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.HorizonView
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.License
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Nsxt
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Sdk
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Srm
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Storage
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Vds
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.Vmc
+Import-Module /root/.local/share/powershell/Modules/VMware.VimAutomation.vROps
 
 
 try{
