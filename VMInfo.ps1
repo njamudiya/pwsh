@@ -2,10 +2,17 @@ Param([String]$pass,[String]$vipass)
 
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
+$Header = @"
+<style>
+TABLE {border-width: 1px; border-style: solid; border-color: black; border-collapse: collapse;}
+TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
+</style>
+"@
+
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
-    $msg = $msg|Select-Object Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id|ConvertTo-Html
+    $msg = $msg|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
     Disconnect-VIServer -Confirm:$false
 }
 catch{
