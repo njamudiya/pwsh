@@ -28,7 +28,8 @@ try{
 
     $snapshots = Get-VM | ForEach-Object{Get-Snapshot -VM $_ | Select-Object VM,PowerState,Name,Created,Description}
     $msg += '<br>'
-    $msg += $snapshots|ConvertTo-Html -Head $Header
+    $snapshots = $snapshots|ConvertTo-Html -Head $Header
+    $msg += $snapshots
     Disconnect-VIServer -Confirm:$false
 }
 catch{
