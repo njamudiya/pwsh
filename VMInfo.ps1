@@ -1,6 +1,5 @@
 Param([String]$pass,[String]$vipass)
 
-Install-Module VMware.PowerCLI -Scope CurrentUser -Confirm:$false -Force
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
 try{
