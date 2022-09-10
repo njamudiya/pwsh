@@ -17,7 +17,7 @@ TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 try{
     Connect-VIServer 192.168.1.20 -User $vcuser -Password $vcpass
     $snapshots = Get-VM | %{Get-Snapshot -VM $_ | Select VM,PowerState,Name,Created,Description}
-    $msg = $snapshots|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
+    $msg = $snapshots|ConvertTo-Html -Head $Header
     Disconnect-VIServer -Confirm:$false
 }
 catch{
