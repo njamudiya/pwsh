@@ -1,5 +1,7 @@
 Param([String]$pass,[String]$vipass)
 
+Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
+
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
