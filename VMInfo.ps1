@@ -1,6 +1,6 @@
 Param([String]$pass,[String]$vipass)
 
-Import-Module "./Modules/VMware.PowerCLI/12.7.0.20091289/VMware.PowerCLI.psd1" -Global
+Import-Module ./Modules/VMware.PowerCLI/12.7.0.20091289/VMware.PowerCLI.psd1 -Global
 
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
