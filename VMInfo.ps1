@@ -5,10 +5,6 @@ Import-Module ./Modules/VMware.VimAutomation.Sdk/12.7.0.20067606/VMware.VimAutom
 
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false
 
-if(-not (Get-PSSnapin VMware.VimAutomation.Core)){
-    Add-PSSnapin VMware.VimAutomation.Core
-}
-
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
