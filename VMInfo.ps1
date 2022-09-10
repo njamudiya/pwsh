@@ -1,5 +1,21 @@
 Param([String]$pass,[String]$vipass)
+
+Import-Module -Name VMware.Vim
+Import-Module -Name VMware.VimAutomation.Cis.Core
+Import-Module -Name VMware.VimAutomation.Cloud
+Import-Module -Name VMware.VimAutomation.Common
 Import-Module -Name VMware.VimAutomation.Core
+Import-Module -Name VMware.VimAutomation.HorizonView
+Import-Module -Name VMware.VimAutomation.License
+Import-Module -Name VMware.VimAutomation.Nsxt
+Import-Module -Name VMware.VimAutomation.Sdk
+Import-Module -Name VMware.VimAutomation.Srm
+Import-Module -Name VMware.VimAutomation.Storage
+Import-Module -Name VMware.VimAutomation.Vds
+Import-Module -Name VMware.VimAutomation.Vmc
+Import-Module -Name VMware.VimAutomation.vROps
+
+
 try{
     Connect-VIServer 192.168.1.20 -User 'srini' -Password 'rM)xBj7#'
     $msg = Get-VM
