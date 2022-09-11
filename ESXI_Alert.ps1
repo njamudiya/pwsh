@@ -43,6 +43,11 @@ catch{
     $sub = "Alert : Failed ot get ESXI information"
 }
 
+$Username = $smtpuser
+$Password = ConvertTo-SecureString $smtppass -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential $Username, $Password
+
+
 if($sub){
     Send-MailMessage -SmtpServer $smtpserver -Port $smtpport -From $from -To $to -Body "$msg" -Subject "$sub $((Get-Date).ToString())" -Credential $credential -UseSsl -Verbose -BodyAsHtml
 }
