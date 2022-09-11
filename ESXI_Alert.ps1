@@ -29,13 +29,16 @@ try{
     $ds | foreach{
         $perstorage = ($_.FreeSpaceGB)*100/($_.CapacityGB)
         if($perstorage -ge 80){
-            $sub = "Alert : High Staorage utilzation"
+            $sub = "Alert : High Storage utilzation"
         }
     }
 
     $ds | Select Name, FreeSpaceGB, CapacityGB | Format-Table
-    $msg = $nuc | ConvertTo-Html
-    $msg += $ds | ConvertTo-Html
+
+    $msg = $nuc| Select Name,ConnectionState,PowerState,NumCpu,CpuUsageMhz,CpuTotalMhz,MemoryUsageGB,MemoryTotalGB,Version | ConvertTo-Html
+    $msg += $ds| Select Name,FreeSpaceGB,CapacityGB | ConvertTo-Html
+
+
     Disconnect-VIServer -Confirm:$false
 }
 catch{
