@@ -29,6 +29,8 @@ try{
 
     $snapshots = Get-VM | ForEach-Object{Get-Snapshot -VM $_ | Select-Object VM,PowerState,Name,Created,Description}
     $msg += '<br>'
+    $msg += <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    $msg += '<br>'
     $snapshots = $snapshots|ConvertTo-Html -Head $Header
     $msg += $snapshots
     Disconnect-VIServer -Confirm:$false
