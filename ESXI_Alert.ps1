@@ -21,14 +21,14 @@ try{
         $sub = "Alert : High CPU utilzation"
     }
 
-    if($percpu -le 80){
+    if($percpu -ge 80){
         $sub = "Alert : High Memory utilzation"
     }
 
     $ds = Get-Datastore
     $ds | foreach{
         $perstorage = ($_.FreeSpaceGB)*100/($_.CapacityGB)
-        if($perstorage -ge 80){
+        if($perstorage -ge 85){
             $sub = "Alert : High Storage utilzation"
         }
     }
