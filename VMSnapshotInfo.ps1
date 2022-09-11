@@ -23,7 +23,7 @@ TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 
 try{
     Connect-VIServer $VIServer -User $vcuser -Password $vcpass
-    $msg = Get-Host |ConvertTo-Html
+    $msg = Get-Host
     $vms = Get-VM
     $msg += $vms|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
 
