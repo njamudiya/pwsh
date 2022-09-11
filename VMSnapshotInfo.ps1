@@ -19,7 +19,14 @@ TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; b
 TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 </style>
 "@
-$Header2 = $Header1
+$Header2 = @"
+<style>
+TABLE {border-width: 1px; border-style: solid; border-color: black; border-collapse: collapse;}
+TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; background-color: #6495ED;}
+TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
+</style>
+"@
+
 try{
     Connect-VIServer $VIServer -User $vcuser -Password $vcpass
 
