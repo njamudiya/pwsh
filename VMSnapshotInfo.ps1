@@ -22,7 +22,7 @@ TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 $Header2 = @"
 <style>
 TABLE {border-width: 1px; border-style: solid; border-color: black; border-collapse: collapse;}
-TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; background-color: #6495ED;}
+TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; background-color: #EDBD64;}
 TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 </style>
 "@
