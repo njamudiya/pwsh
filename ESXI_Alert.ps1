@@ -21,7 +21,7 @@ try{
         $sub = "Alert : High CPU utilzation"
     }
 
-    if($percpu -ge 80){
+    if($permem -ge 80){
         $sub = "Alert : High Memory utilzation"
     }
 
