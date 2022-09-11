@@ -28,7 +28,7 @@ try{
     $ds = Get-Datastore
     $ds | foreach{
         $perstorage = ($_.FreeSpaceGB)*100/($_.CapacityGB)
-        if($perstorage -ge 85){
+        if($perstorage -ge 80){
             $sub = "Alert : High Staorage utilzation"
         }
     }
