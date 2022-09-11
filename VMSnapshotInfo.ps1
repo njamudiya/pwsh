@@ -12,30 +12,24 @@ Param(
 
 Set-PowerCLIConfiguration  -InvalidCertificateAction Ignore -Confirm:$false
 
-$Header1 = @"
+$Header = @"
 <style>
 TABLE {border-width: 1px; border-style: solid; border-color: black; border-collapse: collapse;}
 TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; background-color: #6495ED;}
 TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
 </style>
 "@
-$Header2 = @"
-<style>
-TABLE {border-width: 1px; border-style: solid; border-color: black; border-collapse: collapse;}
-TH {border-width: 1px; padding: 3px; border-style: solid; border-color: black; background-color: #EDBD64;}
-TD {border-width: 1px; padding: 3px; border-style: solid; border-color: black;}
-</style>
-"@
+
 
 try{
     Connect-VIServer $VIServer -User $vcuser -Password $vcpass
 
     $msg = Get-VM
-    $msg = $msg|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header1
+    $msg = $msg|ConvertTo-Html -Property Name,PowerState,Guest,NumCpu,CoresPerSocket,MemoryMB,Version,HardwareVersion,PersistentId,GuestId,UsedSpaceGB,ProvisionedSpaceGB,CreateDate,MemoryHotAddLimit,Id -Head $Header
 
     $snapshots = Get-VM | ForEach-Object{Get-Snapshot -VM $_ | Select-Object VM,PowerState,Name,Created,Description}
     $msg += '<br>'
-    $snapshots = $snapshots|ConvertTo-Html -Head $Header2
+    $snapshots = $snapshots|ConvertTo-Html -Head $Header
     $msg += $snapshots
     Disconnect-VIServer -Confirm:$false
 }
